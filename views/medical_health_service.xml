@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_health_service_form_view" model="ir.ui.view">
+            <field name="name">medical.health_service.form.view</field>
+            <field name="model">medical.health_service</field>
+            <field name="arch" type="xml">
+                <form string="Service">
+                    <header>
+                        <button name="button_set_to_confirm"
+                            string="Confirm" states="draft" type="object" />
+                        <field name="state" widget="statusbar"
+                            statusbar_visible="draft,confirmed" />
+                    </header>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="description" />
+                        </group>
+                        <group>
+                            <field name="patient_id" />
+                            <field name="service_date" />
+                        </group>
+                        <field name="service_line_ids" nolabel="1"
+                            colspan="8">
+                            <tree>
+                                <field name="to_invoice" />
+                                <field name="description" />
+                                <field name="product_id" />
+                                <field name="qty" />
+                                <field name="from_date" />
+                                <field name="to_date" />
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_health_service_tree_view" model="ir.ui.view">
+            <field name="name">medical.health_service.tree.view</field>
+            <field name="model">medical.health_service</field>
+            <field name="arch" type="xml">
+                <tree string="Service">
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="patient_id" />
+                    <field name="service_date" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_health_service" model="ir.actions.act_window">
+            <field name="name">Medical Service</field>
+            <field name="res_model">medical.health_service</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_health_service" action="action_medical_health_service"
+            string="Medical Service" parent="menu_medical_health_service"
+            sequence="1" />
+    </data>
+</odoo>
+

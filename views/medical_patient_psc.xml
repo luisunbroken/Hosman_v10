@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_patient_psc_tree_view" model="ir.ui.view">
+            <field name="name">medical.patient.psc.tree.view</field>
+            <field name="model">medical.patient.psc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="patient_id" />
+                    <field name="evaluation_start" />
+                    <field name="psc_total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_patient_psc_form_view" model="ir.ui.view">
+            <field name="name">medical.patient.psc.form.view</field>
+            <field name="model">medical.patient.psc</field>
+            <field name="arch" type="xml">
+                <form string="Pediatric Symptoms Checklist">
+                    <sheet string="Basic Info">
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="patient" />
+                            </div>
+                            <h1>
+                                <field style="width: 30%%" name="patient_id"
+                                    default_focus="1" placeholder="Patient" />
+                            </h1>
+                        </div>
+                        <group string="General">
+                            <group>
+                                <field name="user_id" readonly="1" />
+                                <field name="evaluation_start" />
+                            </group>
+
+                            <group>
+                                    <field name="evaluation_start" />
+                                    <field name="appointment_id" />
+                                    <field name="psc_total" />
+                                </group>
+                        </group>
+                        <group>
+                                <group string="Checklist">
+                                    <field name="psc_aches_pains" />
+                                    <field name="psc_spend_time_alone" />
+                                    <field name="psc_tires_easily" />
+                                    <field name="psc_fidgety" />
+                                    <field name="psc_trouble_with_teacher" />
+                                    <field name="psc_less_interest_in_school" />
+                                    <field name="psc_acts_as_driven_by_motor" />
+                                    <field name="psc_daydreams_too_much" />
+                                    <field name="psc_distracted_easily" />
+                                    <field
+                                        name="psc_afraid_of_new_situations" />
+                                    <field name="psc_sad_unhappy" />
+                                    <field name="psc_irritable_angry" />
+                                    <field name="psc_feels_hopeless" />
+                                    <field name="psc_trouble_concentrating" />
+                                    <field
+                                        name="psc_less_interested_in_friends" />
+                                    <field name="psc_fights_with_others" />
+                                    <field name="psc_absent_from_school" />
+                                </group>
+                                <group>
+                                    <field name="psc_school_grades_dropping" />
+                                    <field name="psc_down_on_self" />
+                                    <field name="psc_visit_doctor_finds_ok" />
+                                    <field name="psc_trouble_sleeping" />
+                                    <field name="psc_worries_a_lot" />
+                                    <field
+                                        name="psc_wants_to_be_with_parents" />
+                                    <field name="psc_feels_is_bad_child" />
+                                    <field name="psc_takes_unnecesary_risks" />
+                                    <field name="psc_gets_hurt_often" />
+                                    <field name="psc_having_less_fun" />
+                                    <field name="psc_act_as_younger" />
+                                    <field
+                                        name="psc_does_not_listen_to_rules" />
+                                    <field name="psc_does_not_show_feelings" />
+                                    <field
+                                        name="psc_does_not_get_people_feelings" />
+                                    <field name="psc_teases_others" />
+                                    <field
+                                        name="psc_takes_things_from_others" />
+                                    <field name="psc_refuses_to_share" />
+                                </group>
+                        <group string="Notes">
+                            <field name="notes" nolabel="1" />
+                        </group>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="action_medical_patient_psc" model="ir.actions.act_window">
+            <field name="name">Pediatric Symptoms Checklist</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.psc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Pediatrics Symtomps Checklist"
+            id="main_menu_pediatrics_symtomps_checklist" parent="main_menu_pediatrics"
+            action="action_medical_patient_psc" sequence="0" />
+
+    </data>
+</odoo>

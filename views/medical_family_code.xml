@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_medical_family_code_form_view" model="ir.ui.view">
+            <field name="name">medical.family.code.form.view</field>
+            <field name="model">medical.family_code</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Family List">
+                    <sheet>
+                        <group string="General">
+                            <field name="name" required="1" />
+                            <field name="operational_sector_id" />
+                        </group>
+                        <group string="Members">
+                            <field nolabel="1" name="members_ids"
+                                 />
+                        </group>
+                        <group string="Extra Info">
+                            <field nolabel="1" name="info" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_medical_family_code_tree_view" model="ir.ui.view">
+            <field name="name">medical.family.code.tree.view</field>
+            <field name="model">medical.family_code</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Family List">
+                    <field name="name" />
+                    <field name="operational_sector_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_family_code" model="ir.actions.act_window">
+            <field name="name">Families</field>
+            <field name="res_model">medical.family_code</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_family_code" action="action_medical_family_code"
+            string="Familes" parent="menu_patients" sequence="1" />
+
+    </data>
+</odoo>

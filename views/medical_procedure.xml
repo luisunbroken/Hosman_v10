@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_procedure_form_view" model="ir.ui.view">
+            <field name="name">medical.procedure.form.view</field>
+            <field name="model">medical.procedure</field>
+            <field name="arch" type="xml">
+                <form string="Code">
+                    <group>
+                        <field name="name" />
+                        <field name="description" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_procedure_tree_view" model="ir.ui.view">
+            <field name="name">medical.procedure.tree.view</field>
+            <field name="model">medical.procedure</field>
+            <field name="arch" type="xml">
+                <tree string="Procedure">
+                    <field name="name" />
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_procedure" model="ir.actions.act_window">
+            <field name="name">Medical Procedures</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.procedure</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_procedure" name="Medical Procedures"
+            parent="hospital_management.main_menu_configartion"
+            sequence='4' />
+
+        <menuitem id="menu_sub_medical_procedure" action="action_medical_procedure"
+            sequence="0" parent="menu_medical_procedure" />
+
+    </data>
+</odoo>

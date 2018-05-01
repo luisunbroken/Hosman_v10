@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="wizard_multiple_test_request_view" model="ir.ui.view">
+            <field name="name">wizard.multiple.test.request.view</field>
+            <field name="model">wizard.multiple.test.request</field>
+            <field name="arch" type="xml">
+
+                <form string="Multiple Request Wizard">
+                    <sheet>
+                        <group colspan="4" col="4">
+                            <field name="request_date" />
+                            <field name="wizard_multiple_test_physician_id" />
+                            <field name="wizard_multiple_test_patient_id" />
+                            <field name="urgent" />
+                            <field name="wizard_multiple_test_owner_partner_id" />
+
+
+                        </group>
+                        <field name="tests_ids">
+                            <tree>
+                                <field name="name" />
+                                <field name="code" />
+                            </tree>
+                        </field>
+                    </sheet>
+                    <footer>
+                        <button name="create_lab_test" type="object"
+                            class="oe_highlight" string="Create lab Test" />
+                        or
+                        <button special="cancel" class="oe_highlight"
+                            string="Cancel" />
+                    </footer>
+
+
+                </form>
+            </field>
+        </record>
+
+        <record id="action_multiple_test_request_wizard"
+            model="ir.actions.act_window">
+            <field name="name">Multiple Tests Wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.multiple.test.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

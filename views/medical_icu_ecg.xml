@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_icu_ecg_tree_view" model="ir.ui.view">
+            <field name="name">medical.icu.ecg.tree.view</field>
+            <field name="model">medical.icu.ecg</field>
+            <field name="arch" type="xml">
+                <tree string="ECG" editable="top">
+                    <field name="ecg_date" />
+                    <field name="medical_inpatient_registration_id" />
+                    <field name="lead" />
+                    <field name="axis" />
+                    <field name="rate" />
+                    <field name="pacemaker" />
+                    <field name="rhythm" />
+                    <field name="pr" />
+                    <field name="qrs" />
+                    <field name="qt" />
+                    <field name="st_segment" />
+                    <field name="twave_inversion" />
+                    <field name="interpretation" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_icu_ecg" model="ir.actions.act_window">
+            <field name="name">ECG</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.icu.ecg</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_icu_ecg_form" action="action_medical_icu_ecg"
+            sequence="4" parent="menu_intensive_care" />
+
+    </data>
+</odoo>

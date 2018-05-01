@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_hospital_ward_form_view" model="ir.ui.view">
+            <field name="name">medical.hospital.ward.form.view</field>
+            <field name="model">medical.hospital.ward</field>
+            <field name="arch" type="xml">
+                <form string="Health Center Ward">
+                    <group colspan="4" col="4">
+                        <field name="name" required="1" />
+                        <field name="medical_hospital_ward_institution_id" />
+                        <field name="medical_hospital_building_id" />
+                        <field name="floor" />
+                        <field name="private" />
+                        <field name="medical_hospital_unit_id" />
+                        <field name="bio_hazard" />
+                        <newline />
+                        <field name="number_of_beds" />
+                        <field name="gender" />
+                        <field name="telephone" />
+                        <field name="ac" />
+                        <field name="private_bathroom" />
+                        <field name="guest_sofa" />
+                        <field name="tv" />
+                        <field name="internet" />
+                        <field name="refrigerator" />
+                        <field name="microwave" />
+                        <field name="state" />
+                        <newline />
+                        <field name="extra_info" colspan="4" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_hospital_ward_tree_view" model="ir.ui.view">
+            <field name="name">medical.hospital.ward.tree.view</field>
+            <field name="model">medical.hospital.ward</field>
+            <field name="arch" type="xml">
+                <tree string="Health Center Ward Info">
+                    <field name="name" />
+                    <field name="number_of_beds" />
+                    <field name="gender" />
+                    <field name="medical_hospital_ward_institution_id" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_hospital_ward" model="ir.actions.act_window">
+            <field name="name">Health Center Wards</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.hospital.ward</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_health_centers_hospital_ward"
+            action="action_medical_hospital_ward" sequence="4"
+            parent="menu_health_centers" />
+
+    </data>
+</odoo>

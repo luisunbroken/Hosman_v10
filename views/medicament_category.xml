@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medicament_category_form_view" model="ir.ui.view">
+            <field name="name">medicament.category.form.view</field>
+            <field name="model">medicament.category</field>
+            <field name="arch" type="xml">
+                <form string="Medicament categories">
+                    <group colspan="4" col="4">
+                        <field name="name" />
+                        <field name="parent_id" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medicament_category_tree_view" model="ir.ui.view">
+            <field name="name">medicament.category.tree.view</field>
+            <field name="model">medicament.category</field>
+            <field name="arch" type="xml">
+                <tree string="Medicament Categories">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medicament_category_tree"
+            model="ir.actions.act_window">
+            <field name="name">Medicament categories Structure</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medicament.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medication_medicament_category"
+            action="action_medicament_category_tree" sequence="6"
+            parent="menu_medicament" />
+
+        <record id="action_medicament_category_form"
+            model="ir.actions.act_window">
+            <field name="name">Medicament categories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medicament.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medication_medicament_category_form"
+            action="action_medicament_category_form" sequence="7"
+            parent="menu_medicament" />
+
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_hospital_unit_form_view" model="ir.ui.view">
+            <field name="name">medical.hospital.unit.form.view</field>
+            <field name="model">medical.hospital.unit</field>
+            <field name="arch" type="xml">
+                <form string="Health Center Building">
+                    <group colspan="4" col="4">
+                        <field name="name" required="1" />
+                        <field name="medical_hospital_unit_institution_id"
+                        context="{'default_is_institution': 1,
+                        'search_default_is_institution': 1}"/>
+                        <field name="code" />
+                        <newline />
+                        <field name="extra_info" colspan="4" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_hospital_unit_tree_view" model="ir.ui.view">
+            <field name="name">medical.hospital.unit.tree.view</field>
+            <field name="model">medical.hospital.unit</field>
+            <field name="arch" type="xml">
+                <tree string="Health Center Unit Info">
+                    <field name="name" />
+                    <field name="medical_hospital_unit_institution_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_hospital_unit" model="ir.actions.act_window">
+            <field name="name">Health Center Units</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.hospital.unit</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_health_centers_hospital_unit"
+            action="action_medical_hospital_unit" sequence="3"
+            parent="menu_health_centers" />
+
+    </data>
+</odoo>

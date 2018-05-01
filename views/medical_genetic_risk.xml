@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_genetic_risk_form_view" model="ir.ui.view">
+            <field name="name">medical.genetic.risk.form.view</field>
+            <field name="model">medical.genetic.risk</field>
+            <field name="arch" type="xml">
+                <form string="Medical Genetic Risks">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="long_name" />
+                            <newline />
+                            <field name="chromosome" />
+                            <field name="dominance" />
+                            <field name="location" />
+                            <field name="gene" />
+                            <newline />
+                            <field colspan="4" name="info" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_genetic_risk_tree_view" model="ir.ui.view">
+            <field name="name">medical.genetic.risk.tree.view</field>
+            <field name="model">medical.genetic.risk</field>
+            <field name="arch" type="xml">
+                <tree string="Genetic Risks">
+                    <field name="name" />
+                    <field name="long_name" />
+                    <field name="chromosome" />
+                    <field name="dominance" />
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_genetic_risk" model="ir.actions.act_window">
+            <field name="name">Genetic Risks</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.genetic.risk</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_sub_genetic" action="action_medical_genetic_risk"
+            sequence="1" parent="menu_genetic" />
+
+    </data>
+</odoo>

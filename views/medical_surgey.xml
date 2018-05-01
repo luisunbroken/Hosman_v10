@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_surgery_form_view" model="ir.ui.view">
+            <field name="name">medical.surgery.form.view</field>
+            <field name="model">medical.surgery</field>
+            <field name="arch" type="xml">
+                <form string="Surgery">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="procedure_id" />
+                                <field name="description"
+                                    required="1" />
+                                <field name="pathology_id" />
+                                <field name="classification" />
+                            </group>
+                            <group>
+                                <field name="date" />
+                                <field name="age" />
+                                <field name="surgeon_id" />
+                                <field name="extra_info" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="medical_surgery_tree_view" model="ir.ui.view">
+            <field name="name">medical.surgery.tree.view</field>
+            <field name="model">medical.surgery</field>
+            <field name="arch" type="xml">
+                <tree string="Surgery">
+                    <field name="procedure_id" />
+                    <field name="description" />
+                    <field name="pathology_id" />
+                    <field name="classification" />
+                    <field name="date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_surgery" model="ir.actions.act_window">
+            <field name="name">Surgery Lists</field>
+            <field name="res_model">medical.surgery</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- <record id="action_appointments_invoice_wizard" model="ir.actions.act_window"> 
+            <field name="name">Create Invoice</field> <field name="res_model">medical.appointments.invoice.wizard</field> 
+            <field name="view_type">form</field> <field name="view_mode">form</field> 
+            <field name="target">new</field> </record> -->
+
+        <menuitem id="menu_surgery" action="action_medical_surgery"
+            string="Surgery" parent="menu_medical_surgery" sequence="1" />
+
+    </data>
+</odoo>
+

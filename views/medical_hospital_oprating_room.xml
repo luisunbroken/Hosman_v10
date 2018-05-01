@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_hospital_oprating_room_form_view" model="ir.ui.view">
+            <field name="name">medical.hospital.oprating.room.form.view
+            </field>
+            <field name="model">medical.hospital.oprating.room</field>
+            <field name="arch" type="xml">
+                <form string="Hospital Operating Rooms">
+                    <group colspan="4" col="4">
+                        <field name="name" required="1" />
+                        <field name="institution_partner_id"
+                            context="{'default_is_institution': 1, 'search_default_is_institution': 1}" />
+                        <field name="medical_hospital_building_id" />
+                        <field name="medical_hospital_unit_id" />
+                        <newline />
+                        <field name="extra_info" colspan="4" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_hospital_oprating_room_tree_view" model="ir.ui.view">
+            <field name="name">medical.hospital.oprating.room.tree.view
+            </field>
+            <field name="model">medical.hospital.oprating.room</field>
+            <field name="arch" type="xml">
+                <tree string="Health Center Building Info">
+                    <field name="name" />
+                    <field name="institution_partner_id" />
+                    <field name="medical_hospital_building_id" />
+                    <field name="medical_hospital_unit_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_hospital_operating_room"
+            model="ir.actions.act_window">
+            <field name="name">Hospital Operating Rooms</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.hospital.oprating.room</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_health_centers_hospital_oprating_room"
+            action="action_medical_hospital_operating_room"
+            sequence="6" parent="menu_health_centers" />
+
+    </data>
+</odoo>

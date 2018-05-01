@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_ambulatory_care_procedure_form_view"
+            model="ir.ui.view">
+            <field name="name">medical.ambulatory.care.procedure.form.view
+            </field>
+            <field name="model">medical.ambulatory_care_procedure</field>
+            <field name="arch" type="xml">
+                <form string="Procedure">
+                    <group>
+                        <field name="procedure_id" />
+                        <field name="comments" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

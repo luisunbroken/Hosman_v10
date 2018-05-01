@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_health_service_line_form_view" model="ir.ui.view">
+            <field name="name">medical.health_service.line.form.view
+            </field>
+            <field name="model">medical.health_service.line</field>
+            <field name="arch" type="xml">
+                <form string="Medical Service Line">
+                    <group>
+                        <field name="to_invoice" />
+                        <field name="description" />
+                        <field name="product_id" />
+                        <field name="qty" />
+                        <field name="from_date" />
+                        <field name="to_date" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_health_service_line_tree_view" model="ir.ui.view">
+            <field name="name">medical.health_service.line.tree.view
+            </field>
+            <field name="model">medical.health_service.line</field>
+            <field name="arch" type="xml">
+                <tree string="Service Line">
+                    <field name="to_invoice" />
+                    <field name="description" />
+                    <field name="product_id" />
+                    <field name="qty" />
+                    <field name="from_date" />
+                    <field name="to_date" />
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

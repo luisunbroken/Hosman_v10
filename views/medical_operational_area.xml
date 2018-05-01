@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_operational_area_form_view" model="ir.ui.view">
+            <field name="name">medical.operational_area.form.view</field>
+            <field name="model">medical.operational_area</field>
+            <field name="arch" type="xml">
+                <form string="Region Operational Area">
+                    <group>
+                        <field name="name" required="1" />
+                        <field name="info" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_operational_area_tree_view" model="ir.ui.view">
+            <field name="name">medical.operational_area.tree.view</field>
+            <field name="model">medical.operational_area</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Operational Areas List">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_operational_area" model="ir.actions.act_window">
+            <field name="name">Operational Areas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.operational_area</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_operational_area" name="Operational Areas"
+            parent="main_menu_configartion" sequence='6' />
+        <menuitem id="menu_sub_operational_area" action="action_medical_operational_area"
+            sequence="1" parent="menu_operational_area" />
+
+    </data>
+</odoo>

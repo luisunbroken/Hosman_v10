@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_occupation_form_view" model="ir.ui.view">
+            <field name="name">medical.occupation.form.view</field>
+            <field name="model">medical.occupation</field>
+            <field name="arch" type="xml">
+                <form string="Patient Occupation">
+                    <group colspan="4" col="4">
+                        <field name="name" />
+                        <field name="code" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_occupation_search_view" model="ir.ui.view">
+            <field name="name">medical.occupation.search.view</field>
+            <field name="model">medical.occupation</field>
+            <field name="arch" type="xml">
+                <search string="Search Occupations">
+                    <separator orientation="vertical" />
+                    <field name="name" select="1" />
+                    <field name="code" select="1" />
+                    <newline />
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_occupation_tree_view" model="ir.ui.view">
+            <field name="name">medical.occupation.tree.view</field>
+            <field name="model">medical.occupation</field>
+            <field name="arch" type="xml">
+                <tree string="Occupation">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_occupation" model="ir.actions.act_window">
+            <field name="name">Occupations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.occupation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_occupation" parent="menu_misc"
+            action="action_medical_occupation" sequence="9" />
+    </data>
+</odoo>

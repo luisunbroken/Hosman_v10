@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="medical_bed_transfer_wizard_view" model="ir.ui.view">
+            <field name="name">medical.bed.transfer.wizard.view</field>
+            <field name="model">medical.bed.transfer.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Bed Transfer">
+                    <h2>
+                        Please choose the new bed to allocate.
+                    </h2>
+                    <group>
+                        <field name="medical_hospital_bed_id" />
+                        <field name="reason" />
+                    </group>
+                    <footer>
+                        <button name="bed_transfer" class="oe_highlight"
+                            string="Transfer" type="object" />
+                        or
+                        <button string="Cancel" class="oe_highlight"
+                            type="object" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_drugs_recreational_form_view" model="ir.ui.view">
+            <field name="name">medical.drugs.recreational.form.view</field>
+            <field name="model">medical.drugs_recreational</field>
+            <field name="arch" type="xml">
+                <form string="Recreational Drugs">
+                    <group string="General Information">
+                        <group colspan="4" col="4">
+                            <field name="name" required="True" />
+                            <field name="street_name" />
+                            <newline />
+                            <field name="toxicity" />
+                            <field name="addiction_level" />
+                            <field name="legal_status" />
+                            <field name="category" />
+                        </group>
+                    </group>
+                    <newline />
+                    <separator col="4" string="DEA Schedule Level" />
+                    <newline />
+                    <group col="10">
+                        <field name="dea_schedule_i" />
+                        <field name="dea_schedule_ii" />
+                        <field name="dea_schedule_iii" />
+                        <field name="dea_schedule_iv" />
+                        <field name="dea_schedule_v" />
+                    </group>
+                    <newline />
+                    <separator col="4" string="Henningfield Rating" />
+                    <newline />
+                    <group>
+                        <group>
+                            <field name="withdrawal_level" />
+                            <field name="reinforcement_level" />
+                            <field name="tolerance_level" />
+                        </group>
+                        <group>
+                            <field name="dependence_level" />
+                            <field name="intoxication_level" />
+                        </group>
+                    </group>
+                    <separator colspan="4" string="Administration Routes" />
+                    <group colspan="4" col="4">
+                        <field name="route_oral" />
+                        <field name="route_inhaling" />
+                        <field name="route_popping" />
+                        <field name="route_sniffing" />
+                        <field name="route_injection" />
+                    </group>
+                    <newline />
+                    <separator colspan="4"
+                        string="Additional Info and Effects" />
+                    <field name="info" nolabel="1" colspan="4" />
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_drugs_recreational_search_view"
+            model="ir.ui.view">
+            <field name="name">medical.drugs.recreational.search.view</field>
+            <field name="model">medical.drugs_recreational</field>
+            <field name="arch" type="xml">
+                <search string="Search Recreational Drugs">
+                    <separator orientation="vertical" />
+                    <field name="name" select="1" />
+                    <field name="street_name" select="1" />
+                    <field name="toxicity" select="1" />
+                    <field name="addiction_level" select="1" />
+                    <newline />
+
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_drugs_recreational_tree_view" model="ir.ui.view">
+            <field name="name">medical.drugs.recreational.tree.view</field>
+            <field name="model">medical.drugs_recreational</field>
+            <field name="arch" type="xml">
+                <tree string="Recreational Drugs">
+                    <field name="name" />
+                    <field name="category" />
+                    <field name="toxicity" />
+                    <field name="addiction_level" />
+                    <field name="street_name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_drugs_recreational" model="ir.actions.act_window">
+            <field name="name">Recreational Drugs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.drugs_recreational</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_drugs_recreational" parent="menu_misc"
+            action="action_medical_drugs_recreational" sequence="11" />
+    </data>
+</odoo>

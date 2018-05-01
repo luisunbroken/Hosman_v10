@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="medical_speciality_form_view" model="ir.ui.view">
+            <field name="name">medical.speciality.form.view</field>
+            <field name="model">medical.speciality</field>
+            <field name="arch" type="xml">
+                <form string="Medical Speciality">
+                    <group colspan="4" col="4">
+                        <field name="name" required="1" />
+                        <field name="code" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_speciality_tree_view" model="ir.ui.view">
+            <field name="name">medical.speciality.tree.view</field>
+            <field name="model">medical.speciality</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Speciality">
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_speciality" model="ir.actions.act_window">
+            <field name="name">Medical Specialties</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.speciality</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_speciality" parent="menu_misc"
+            action="action_medical_speciality" sequence="1" />
+
+    </data>
+</odoo>
